@@ -35,13 +35,12 @@ TEST(AddTest, OverflowWrap) {
   EXPECT_EQ(data_lab::add(INT32_MAX, 1), INT32_MIN);
 }
 
-TEST(AddTest, CommutativeProperty) {
-  EXPECT_EQ(data_lab::add(7, 13), data_lab::add(13, 7));
+TEST(AddTest, RandomNumber1) {
+  EXPECT_EQ(data_lab::add(-894229282, -1769294128), 1631443886);
 }
 
-TEST(AddTest, AssociativeProperty) {
-  EXPECT_EQ(data_lab::add(data_lab::add(1, 2), 3),
-            data_lab::add(1, data_lab::add(2, 3)));
+TEST(AddTest, RandomNumber2) {
+  EXPECT_EQ(data_lab::add(438424601, 513276783), 951701384);
 }
 
 // Subtract function tests (12 tests)
@@ -77,7 +76,9 @@ TEST(SubtractTest, UnderflowWrap) {
 
 TEST(SubtractTest, SameNumbers) { EXPECT_EQ(data_lab::subtract(42, 42), 0); }
 
-TEST(SubtractTest, Identity) { EXPECT_EQ(data_lab::subtract(100, 0), 100); }
+TEST(SubtractTest, RandomNumber) {
+  EXPECT_EQ(data_lab::subtract(-31188285, -1132498087), 1101309802);
+}
 
 // Multiply function tests (12 tests)
 TEST(MultiplyTest, PositiveNumbers) { EXPECT_EQ(data_lab::multiply(5, 3), 15); }
@@ -112,13 +113,12 @@ TEST(MultiplyTest, NearIntMax) {
   EXPECT_EQ(data_lab::multiply(INT32_MAX / 2, 2), INT32_MAX - 1);
 }
 
-TEST(MultiplyTest, CommutativeProperty) {
-  EXPECT_EQ(data_lab::multiply(7, 13), data_lab::multiply(13, 7));
+TEST(MultiplyTest, RandomNumber1) {
+  EXPECT_EQ(data_lab::multiply(-1351161440, -839349802), -1016206400);
 }
 
-TEST(MultiplyTest, DistributiveProperty) {
-  EXPECT_EQ(data_lab::multiply(2, data_lab::add(3, 4)),
-            data_lab::add(data_lab::multiply(2, 3), data_lab::multiply(2, 4)));
+TEST(MultiplyTest, RandomNumber2) {
+  EXPECT_EQ(data_lab::multiply(1827679637, -1888372867), 1000391873);
 }
 
 // Divide function tests (12 tests)
@@ -152,10 +152,12 @@ TEST(DivideTest, PowersOfTwo) {
   EXPECT_EQ(data_lab::divide(1 << 20, 1 << 10), 1 << 10);
 }
 
-TEST(DivideTest, IntegerDivision) { EXPECT_EQ(data_lab::divide(17, 5), 3); }
+TEST(DivideTest, RandomNumber1) {
+  EXPECT_EQ(data_lab::divide(-1223815843, -195563321), 6);
+}
 
-TEST(DivideTest, NegativeIntegerDivision) {
-  EXPECT_EQ(data_lab::divide(-17, 5), -3);
+TEST(DivideTest, RandomNumber2) {
+  EXPECT_EQ(data_lab::divide(1927263441, -754677301), -2);
 }
 
 // Modulo function tests (12 tests)
@@ -185,8 +187,10 @@ TEST(ModuloTest, LargeNumbers) {
   EXPECT_EQ(data_lab::modulo(1000007, 1000), 7);
 }
 
-TEST(ModuloTest, PowersOfTwo) { EXPECT_EQ(data_lab::modulo(1023, 512), 511); }
+TEST(ModuloTest, RandomNumber1) {
+  EXPECT_EQ(data_lab::modulo(1866041187, -1992637480), 1866041187);
+}
 
-TEST(ModuloTest, NegativeLargeNumber) {
-  EXPECT_EQ(data_lab::modulo(-1000007, 1000), -7);
+TEST(ModuloTest, RandomNumber2) {
+  EXPECT_EQ(data_lab::modulo(-1205291292, -644190970), -561100322);
 }
