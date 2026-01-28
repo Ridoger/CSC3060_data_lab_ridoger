@@ -1,4 +1,4 @@
-感谢[一次型解决超前进位加法器——32位CLA的实现 —— 叶逸昇]("https://yeyisheng.github.io/2024/11/21/%E4%B8%80%E6%AC%A1%E5%9E%8B%E8%A7%A3%E5%86%B3%E8%B6%85%E5%89%8D%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8%E2%80%94%E2%80%9432%E4%BD%8DCLA%E7%9A%84%E5%AE%9E%E7%8E%B0/", ), 其中详细的叙述给了我不小的帮助
+感谢[一次型解决超前进位加法器——32位CLA的实现 —— 叶逸昇](https://yeyisheng.github.io/2024/11/21/%E4%B8%80%E6%AC%A1%E5%9E%8B%E8%A7%A3%E5%86%B3%E8%B6%85%E5%89%8D%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8%E2%80%94%E2%80%9432%E4%BD%8DCLA%E7%9A%84%E5%AE%9E%E7%8E%B0/), 其中详细的叙述给了我不小的帮助
 
 # Data Lab: Bitwise Arithmetic Implementation
 
