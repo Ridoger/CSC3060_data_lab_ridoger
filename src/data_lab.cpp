@@ -59,13 +59,13 @@ int32_t divide(int32_t a, int32_t b) {
     if (a >> 31 & 1) a = add(~a, 1);
     if (b >> 31 & 1) b = add(~b, 1);
     
-    for (int32_t i = 0; i < 32; ++i) {
+    for (int32_t i = 31; i >= 0; --i) {
 
         // Check whether divisor's multiplier > dividend
         // In case of overflow, we shrink the dividend instead of expanding the divisor
-        if (subtract(a >> subtract(31, i), b) >> 31 & 1 ^ 1) {
-            a = subtract(a, b << subtract(31, i));     // Reminder
-            result |= 1 << subtract(31, i);     // Add corresponding value to quotient
+        if (subtract(a >> i, b) >> 31 & 1 ^ 1) {
+            a = subtract(a, b << i);     // Reminder
+            result |= 1 << i;     // Add corresponding value to quotient
         }
 
     }
