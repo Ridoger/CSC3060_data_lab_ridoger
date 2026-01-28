@@ -37,11 +37,10 @@ int32_t multiply(int32_t a, int32_t b) {
     int32_t result = 0;
     
     for (int32_t i = 0; i < 32; ++i) {
-        if (1 & b) {
-            result = add(result, a);
+        if (1 & a) {
+            result = add(result, b << i);
         }
-        a <<= 1;
-        b >>= 1;
+        a >>= 1;
     }
 
     return result;
