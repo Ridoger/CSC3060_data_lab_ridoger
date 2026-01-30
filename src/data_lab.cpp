@@ -52,19 +52,21 @@ int32_t divide(int32_t a, int32_t b) {
     int32_t result = 0;
 
     // Check for sign of quotient
-    // Operator priority: >>, &, ^; from high to low
-    int32_t minus = a >> 31 & 1 ^ b >> 31 & 1;
+    int32_t minus = (a ^ b) >> 31;
+
+    uint32_t ua = static_cast<uint32_t>(a);
+    uint32_t ub = static_cast<uint32_t>(b);
 
     // Take absolute values
-    if (a >> 31 & 1) a = add(~a, 1);
-    if (b >> 31 & 1) b = add(~b, 1);
+    if (ua >> 31 & 1) ua = add(~ua, 1);
+    if (ub >> 31 & 1) ub = add(~ub, 1);
     
     for (int32_t i = 31; i >= 0; --i) {
 
         // Check whether divisor's multiplier > dividend
         // In case of overflow, we shrink the dividend instead of expanding the divisor
-        if (subtract(a >> i, b) >> 31 & 1 ^ 1) {
-            a = subtract(a, b << i);     // Reminder
+        if (subtract(ua >> i, ub) >> 31 & 1 ^ 1) {
+            ua = subtract(ua, ub << i);     // Reminder
             result |= 1 << i;     // Add corresponding value to quotient
         }
 
